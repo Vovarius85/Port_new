@@ -1,0 +1,29 @@
+{% extends 'flatpages/default.html' %}
+{% block title %}
+Post
+{% endblock title %}
+{% block content %}
+   <h1>{{ post.title }}</h1>
+   <h3>{{ time_now|date:'M d Y' }}</h3>
+   <hr>
+   {% if post %}
+       <table>
+           <tr>
+               <td>Дата публикации</td>
+               <td>Текст</td>
+               <td>Автор</td>
+               <td>Рейтинг статьи</td>
+               <td>Тип статьи</td>
+           </tr>
+           <tr>
+               <td>{{ post.time_in|date:'d M Y' }}</td>
+               <td>{{ post.text }}</td>
+               <td>{{ post.author.user }}</td>
+               <td>{{ post.rating_post }}</td>
+               <td>{{ post.type_of_post }}</td>
+           </tr>
+       </table>
+   {% else %}
+       <h2>Такой новости нет!</h2>
+   {% endif %}
+{% endblock content %}
