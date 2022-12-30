@@ -155,3 +155,15 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_FORMS = {'signup': 'news.forms.BasicSignupForm'}
+
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'imeno-tot-vova'
+EMAIL_HOST_PASSWORD = 'TaTaR85'
+EMAIL_USE_SSL = True
+
+ADMINS = [
+    ('Vladimir', 'imeno-tot-vova@mail.com'),
+]
+SERVER_EMAIL = 'imeno-tot-vova@yandex.ru'

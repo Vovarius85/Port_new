@@ -16,10 +16,10 @@ Post
    <h2>Вы не авторизовались, нажмите для входа в аккаунт</h2>-->
    <button> <a href="/accounts/login/">Войти</a> </button>-->
    {% endif %}
-   <h3>Количество новостей на странице: {{posts|length}}</h3>
+   <h3>Количество новостей на странице: {{ posts|length }}</h3>
    <h3>{% current_time '%b %d %Y' %}</h3>
    <hr>
-   {% if posts %}
+   {% if category_news_list %}
        <table>
            <tr>
                <td>Заголовок</td>
@@ -34,11 +34,11 @@ Post
                <td>{{ post.time_in|date:'d M Y' }}</td>
                <td>{{ post.text|truncatewords:21|censor }}</td>
                <td>{{ post.author.user }}</td>
-               <td>
-                   {% for category in post.post_category.all %}
-                      <a href="{% url 'category_list' post_category.id %}">{{ category }}</a>
-                   {% endfor %}
-               </td>
+<!--               <td>-->
+<!--                   {% for category in post.post_category.all %}-->
+<!--                      <a href="{% url 'category_list' post_category.id %}">{{ category }}</a>-->
+<!--                   {% endfor %}-->
+<!--               </td>-->
            </tr>
            {% endfor %}
        </table>
